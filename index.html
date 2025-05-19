@@ -3,28 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onenime Blog</title>
-    <link rel="stylesheet" href="style.css"> <!-- Jika ada file CSS -->
+    <title>Onenime - Blogku</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Kita akan coba panggil font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Selamat Datang di Onenime!</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="postingan-pertama.html">Postingan Pertama</a>
-            <!-- Tambah link ke postingan lain di sini -->
-        </nav>
-    </header>
-    <main>
-        <h2>Ini Halaman Utama</h2>
-        <p>Lihat postingan terbaru kami:</p>
-        <ul>
-            <li><a href="postingan-pertama.html">Judul Postingan Pertama</a></li>
-            <!-- Tambah daftar postingan lain di sini -->
-        </ul>
-    </main>
-    <footer>
-        <p>© 2023 Onenime</p>
-    </footer>
+    <div class="skip-navigation-container">
+        <a href="#main-content" class="skip-navigation">Lompat ke Konten Utama</a>
+    </div>
+
+    <div class="page-container">
+        <header class="site-header">
+            <div class="centered-content">
+                <div class="blog-name">
+                    <a href="index.html">Onenime</a>
+                </div>
+                <nav class="top-navigation">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="arsip.html">Arsip</a></li>
+                        <li><a href="tentang.html">Tentang</a></li>
+                    </ul>
+                </nav>
+                <!-- Search bar (sangat disederhanakan) -->
+                <div class="search-container">
+                    <input type="search" placeholder="Cari...">
+                    <button>Cari</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-wrapper centered-content">
+            <main id="main-content" class="content-area">
+                <article class="post-item">
+                    <header class="post-header">
+                        <h2 class="post-title"><a href="postingan-pertama.html">Postingan Pertama Saya yang Keren!</a></h2>
+                        <div class="post-meta">
+                            <span class="post-date">17 November 2023</span> |
+                            <span class="post-author">oleh Nama Kamu</span>
+                        </div>
+                    </header>
+                    <div class="post-thumbnail">
+                        <!-- Ganti dengan gambar sungguhan jika ada -->
+                        <a href="postingan-pertama.html"><img src="https://via.placeholder.com/800x400?text=Gambar+Postingan" alt="Gambar Postingan Pertama"></a>
+                    </div>
+                    <div class="post-content">
+                        <p>Ini adalah paragraf pertama dari postingan blog saya. Saya menggunakan tema yang terinspirasi dari Vegeclub/Emporio, tapi ini versi yang sangat disederhanakan untuk Netlify.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="postingan-pertama.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+
+                <article class="post-item">
+                    <header class="post-header">
+                        <h2 class="post-title"><a href="postingan-kedua.html">Tips Menulis Konten Menarik</a></h2>
+                        <div class="post-meta">
+                            <span class="post-date">16 November 2023</span> |
+                            <span class="post-author">oleh Nama Kamu</span>
+                        </div>
+                    </header>
+                     <div class="post-thumbnail">
+                        <a href="postingan-kedua.html"><img src="https://via.placeholder.com/800x400?text=Gambar+Lain" alt="Gambar Postingan Kedua"></a>
+                    </div>
+                    <div class="post-content">
+                        <p>Menulis konten yang menarik membutuhkan strategi. Berikut adalah beberapa tips singkat...</p>
+                        <a href="postingan-kedua.html" class="read-more">Baca Selengkapnya →</a>
+                    </div>
+                </article>
+                <!-- Tambahkan lebih banyak <article> di sini untuk postingan lain -->
+
+                <div class="pagination">
+                    <a href="#" class="prev-page">« Postingan Lama</a>
+                    <a href="#" class="next-page">Postingan Baru »</a>
+                </div>
+            </main>
+
+            <aside class="sidebar-area">
+                <div class="widget">
+                    <h3 class="widget-title">Tentang Saya</h3>
+                    <p>Sedikit cerita tentang saya dan blog ini. Selamat membaca!</p>
+                </div>
+                <div class="widget">
+                    <h3 class="widget-title">Kategori</h3>
+                    <ul>
+                        <li><a href="#">Anime Review</a></li>
+                        <li><a href="#">Tutorial</a></li>
+                        <li><a href="#">Opini</a></li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <h3 class="widget-title">Arsip</h3>
+                    <ul>
+                        <li><a href="#">November 2023</a></li>
+                        <li><a href="#">Oktober 2023</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="site-footer">
+            <div class="centered-content">
+                <p>© 2023 Onenime. Dibuat dengan cinta dan kode.</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
