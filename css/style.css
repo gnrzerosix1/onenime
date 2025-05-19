@@ -1,6 +1,293 @@
-body { font-family: sans-serif; margin: 20px; }
-header, footer { background-color: #f0f0f0; padding: 10px; text-align: center; }
-nav a { margin: 0 10px; }
-main { margin-top: 20px; }
-article { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; }
-.tanggal { font-size: 0.9em; color: #777; }
+/* Reset dasar & Font Utama */
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f7f7f7; /* body.background.color */
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ubuntu', sans-serif;
+    color: #1f1f1f; /* blog.title.color (perkiraan untuk semua heading) */
+}
+
+a {
+    color: #729c0b; /* keycolor */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.centered-content {
+    max-width: 1180px; /* Perkiraan lebar konten utama */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Skip Navigation */
+.skip-navigation-container {
+    background-color: #fff;
+    text-align: center;
+}
+.skip-navigation {
+    display: inline-block;
+    padding: 10px;
+    background-color: #efefef;
+    color: #333;
+    text-decoration: none;
+    position: absolute;
+    top: -40px; /* Sembunyikan di luar layar */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: top 0.3s;
+}
+.skip-navigation:focus {
+    top: 0; /* Munculkan saat fokus */
+}
+
+
+/* Header */
+.site-header {
+    background-color: #efefef; /* header.background.color */
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.site-header .centered-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blog-name {
+    font-size: 2.5em; /* blog.title.font (ukuran disesuaikan) */
+    font-weight: 500;
+}
+.blog-name a {
+    color: #1f1f1f; /* blog.title.color */
+    text-decoration: none;
+}
+
+.top-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.top-navigation li {
+    margin-left: 20px;
+}
+
+.top-navigation a {
+    font-weight: 700; /* headerItemFont (perkiraan) */
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.search-container {
+    display: flex;
+    margin-left: 20px; /* Beri jarak dari navigasi */
+}
+.search-container input[type="search"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    font-family: 'Merriweather', serif; /* searchFont */
+}
+.search-container button {
+    padding: 8px 12px;
+    background-color: #729c0b; /* keycolor */
+    color: white;
+    border: 1px solid #729c0b;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+/* Main Content Area */
+.main-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Agar responsif */
+    padding-top: 30px;
+    padding-bottom: 30px;
+    gap: 30px; /* Jarak antara konten dan sidebar */
+}
+
+.content-area {
+    flex: 3; /* Konten utama lebih lebar */
+    min-width: 0; /* Penting untuk flexbox wrapping */
+}
+
+.sidebar-area {
+    flex: 1; /* Sidebar lebih sempit */
+    min-width: 280px; /* Lebar minimum sidebar, sesuai tema */
+}
+
+/* Post Item */
+.post-item {
+    background-color: #ffffff; /* posts.background.color */
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 3px; /* posts.border.radius (jika ada) */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.post-title {
+    font-size: 1.8em; /* posts.title.font (ukuran disesuaikan) */
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.post-title a {
+    color: #212121; /* posts.title.color */
+}
+
+.post-meta {
+    font-size: 0.85em;
+    color: #757575; /* posts.byline.color */
+    font-family: 'Merriweather', serif; /* posts.byline.font */
+    font-style: italic;
+    margin-bottom: 15px;
+}
+.post-meta a {
+    color: #757575;
+}
+
+.post-thumbnail {
+    margin-bottom: 20px;
+}
+.post-thumbnail img {
+    border-radius: 3px;
+}
+
+.post-content {
+    font-family: 'Merriweather', serif; /* bodyFont / posts.text.font */
+    line-height: 1.75; /* posts.text.lineHeight (disesuaikan) */
+    color: #000000; /* posts.text.color */
+}
+.post-content p {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 40px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+.pagination a {
+    margin: 0 10px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.pagination a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+/* Sidebar */
+.widget {
+    background-color: #fff; /* Mirip postingan, atau bisa beda */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.widget-title {
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    font-family: 'Ubuntu', sans-serif; /* sidebarTitleFont */
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget ul li {
+    margin-bottom: 8px;
+}
+
+.widget ul li a {
+    font-family: 'Merriweather', serif; /* sidebarLinkFont */
+    font-size: 0.95em;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #333; /* Warna gelap umum untuk footer */
+    color: #ccc;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+.site-footer p {
+    margin: 0;
+}
+.site-footer a {
+    color: #fff;
+}
+
+/* Responsif sederhana */
+@media (max-width: 768px) {
+    .site-header .centered-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .top-navigation {
+        margin-top: 15px;
+        width: 100%;
+    }
+    .top-navigation ul {
+        flex-direction: column;
+    }
+    .top-navigation li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .search-container {
+        margin-top: 15px;
+        margin-left: 0;
+        width: 100%;
+    }
+    .search-container input[type="search"] {
+        flex-grow: 1; /* Input mengambil sisa ruang */
+    }
+
+    .main-wrapper {
+        flex-direction: column;
+    }
+    .sidebar-area {
+        min-width: 100%; /* Sidebar mengambil lebar penuh di mobile */
+        margin-top: 30px;
+    }
+}
